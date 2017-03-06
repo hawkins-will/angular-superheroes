@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="superApp">
 <head>
   <meta charset="UTF-8">
   <title>Superhero Phone Book</title>
   <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script src="app.js"></script>
+</head>
+<body ng-controller="superCtrl as vm">
+  <p>Search:</p>
+  <input type="text" ng-model="vm.search">
+
+  <div ng-repeat="hero in vm.heroes | filter: vm.search">
+    <div class="{{hero.affiliation}}">
+      <div class="inner">
+        <div class="left">
+          <h3>{{hero.name}}</h3>
+          <p>Phone Number: {{hero.phone}}</p>
+          <p>Affiliation: {{hero.affiliation}}</p>
+          <button ng-click="vm.togglePicture[$index] = !vm.togglePicture[$index]">Show Picture</button>
+        </div>
+        <div class="right">
+          <img ng-src="{{hero.image_url}}" ng-show="vm.togglePicture[$index]">
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

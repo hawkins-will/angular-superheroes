@@ -1,0 +1,42 @@
+.Marvel {
+  background-color: rgba(151,13,2,1)
+}
+
+.DC {
+  background-color: rgba(68,90,156,1)
+}
+
+.Marvel, .DC {
+  margin: 10px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 400px;
+}
+
+.inner {
+  border: 1px solid black;
+  background-color: white;
+  width: 600px;
+  height: 200px;
+  display: flex;
+}
+
+.left {
+  height: 200px;
+  width: 300px;
+  padding: 10px;
+}
+
+.right {
+  height: 200px;
+  width: 300px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+img {
+  height: 200px;
+}
